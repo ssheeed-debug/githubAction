@@ -1,0 +1,19 @@
+
+name: Hello World Timer
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Print Hello World every 20 seconds
+        run: |
+          while true; do
+            echo "Hello World - $(date)"
+            sleep 20
+          done
